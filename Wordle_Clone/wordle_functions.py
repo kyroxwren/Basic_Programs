@@ -27,19 +27,19 @@ def play_game():
 
         print("------------------------------")
         print()
-        print("These the correct letters")
+        print("These are the correct letters")
         for letter in correct_letters:
             print(letter)
         print()
         print("These are your words you have guessed")
         for letter in guessed_words:
-            print(colored(letter,"red"))
+            print(letter)
         print()
 
         correct = correct_word(pc_rd_wd, guess_word)
         if correct:
             print("----------------------------------------------------")
-            print("Congratulations you have won the game\nThe word is: " + str(guess_word))
+            print("Congratulations you have won the game\nThe word is: " + str(colored(guess_word,"green")))
             print("----------------------------------------------------")
             break
         i += 1
@@ -56,8 +56,9 @@ def word_check(computer_word, guess_word):
         for j in guess_word:
             if i == j:
                 letters.append(i)
-            else:
-                letters.append(" ")
+                if correct_word:
+                    break
+            
 
     letters_set_like = list(dict.fromkeys(letters))
     return letters_set_like
