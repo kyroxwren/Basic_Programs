@@ -3,6 +3,7 @@ from termcolor import colored
 
 # --------------------------- main game ----------------------------------
 
+
 # This will start the game with and option to fill in a word
 def play_game():
     game_attempts = 5
@@ -39,7 +40,7 @@ def play_game():
         correct = correct_word(pc_rd_wd, guess_word)
         if correct:
             print("----------------------------------------------------")
-            print("Congratulations you have won the game\nThe word is: " + str(colored(guess_word,"green")))
+            print("Congratulations you have won the game\nThe word is: " + str(colored(guess_word, "green")))
             print("----------------------------------------------------")
             break
         i += 1
@@ -59,7 +60,6 @@ def word_check(computer_word, guess_word):
                 if correct_word:
                     break
             
-
     letters_set_like = list(dict.fromkeys(letters))
     return letters_set_like
 
